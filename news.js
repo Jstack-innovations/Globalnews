@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", fetchGNews);
 
 async function fetchGNews() {
-  const apiKey = "66e47d59086af2af250337e8777cc88b"; // <-- Replace with your GNews API key
-  const apiUrl = `https://gnews.io/api/v4/top-headlines?lang=en&country=us&token=${apiKey}`;
+  const apiUrl = "/api/news"; // <- call your Vercel serverless function
 
   try {
     const response = await fetch(apiUrl);
@@ -39,4 +38,3 @@ async function fetchGNews() {
     document.getElementById('news-container').innerHTML = "<p style='color:red;'>Failed to fetch news. Please try again later.</p>";
   }
 }
-  
