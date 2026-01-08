@@ -17,8 +17,8 @@ async function fetchGNews() {
 
     data.articles.forEach(article => {
       const newsCard = document.createElement("div");
-      newsCard.style.background = "#ddd";
-      newsCard.style.color = "#000";
+      newsCard.style.background = "#000";
+      newsCard.style.color = "#fff";
       newsCard.style.borderRadius = "10px";
       newsCard.style.padding = "15px";
       newsCard.style.margin = "10px";
