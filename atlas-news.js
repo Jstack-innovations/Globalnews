@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", fetchGNews);
 
 async function fetchGNews() {
   //const apiUrl = "/api/news"; // <- call your Vercel serverless function
-   const apiUrl="https://globalnews-pi.vercel.app/api/news.js";
+   const apiUrl="https://globalnews-pi.vercel.app/api/atlas-news.js";
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
