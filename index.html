@@ -910,18 +910,18 @@
     <script>
 const blogs = [
     {
-        Name: "ice.wolf_xiii",
-        platform: "Tiktok",
+        Name: "Valla S Micheals",
+        Resident: "310 S OAK ST,KIMBALL, NE 69145,  Nebraska",
         images: [
-            "blackmail1.jpg",
+            "blackmail1.png",
+            "blackmail4.jpg",
             "blackmail2.jpg",
             "blackmail3.jpg",
-            "blackmail4.jpg",
-            "blackmail5.jpg"
+            "blackmail5.mp4"
         ],
         title: "Breaking: Exposing a Sextortion Scammer",
         detail: "Beware: This Scammer Uses Fake Nudes to Extort Money",
-        date: "Feb 9, 2026 10:00 AM"
+        date: "Mar 4, 2026 13:00"
     },
     {
         Name: "Acme Corp",
@@ -935,7 +935,7 @@ const blogs = [
         ],
         title: "New Marketing Strategies Revealed",
         detail: "How brands are using social media to reach younger audiences.",
-        date: "Feb 9, 2026 10:02 AM"
+        date: "Mar 4, 2026 12:02"
     },
     {
         Name: "Global Media",
@@ -949,7 +949,7 @@ const blogs = [
         ],
         title: "Upcoming Event Coverage",
         detail: "Insights into the annual tech conference happening next week.",
-        date: "Feb 9, 2026 10:05 AM"
+        date: "Mar 4, 2026 11.46"
     }
 ];
 
@@ -967,7 +967,13 @@ blogs.forEach((blog, index) => {
         </div>
         <p>${blog.detail}</p>
         <div class="image-gallery">
-            ${blog.images.map(img => `<img src="${img}" />`).join("")}
+            ${blog.images.map(img => 
+    img.endsWith(".mp4") 
+        ? `<video width="calc(20% - 4px)" height="80" style="object-fit:cover;border-radius:5px;border:1px solid #333;opacity:0.3;transition:opacity 0.5s;" muted>
+                <source src="${img}" type="video/mp4">
+           </video>`
+        : `<img src="${img}" />`
+).join("")}
         </div>
         <div class="spinner-overlay">
             <div class="spinner"></div>
@@ -976,7 +982,7 @@ blogs.forEach((blog, index) => {
     `;
     container.appendChild(card);
 
-    const images = card.querySelectorAll('.image-gallery img');
+    const images = card.querySelectorAll('.image-gallery img, .image-gallery video');
     const overlay = card.querySelector('.spinner-overlay');
     const countdownEl = card.querySelector(`#countdown-${index}`);
 
@@ -1027,4 +1033,4 @@ modal.addEventListener("click", (e) => {
 });
     </script>
 </body>
-</html>
+                        </html>
