@@ -961,8 +961,8 @@ blogs.forEach((blog, index) => {
     card.innerHTML = `
         <h3>${blog.title}</h3>
         <div class="blog-meta">
-    <span>LOG: ${blog.Name || "N/A"}</span>
-<span>Platform: ${blog.platform || blog.Resident || "N/A"}</span>
+    <span>Name: ${blog.Name || "N/A"}</span>
+<span>LOG: ${blog.platform || blog.Resident || "N/A"}</span>
             <span>Date: ${blog.date}</span>
         </div>
         <p>${blog.detail}</p>
